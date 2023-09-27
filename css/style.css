@@ -1,0 +1,11 @@
+.container-fluid{
+    background-image: linear-gradient(rgb(157, 224, 157), rgb(151, 151, 210));
+}
+
+.container{
+    background-color: rgb(225, 216, 216)
+}
+
+.fs-1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
