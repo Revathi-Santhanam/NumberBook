@@ -24,9 +24,9 @@ const editNum = (id) => {
 };
 
 const deleteNum = (id) => {
-  numArray = numArray.filter((nums) => {
-    if (nums.id !== id) {
-      return nums;
+  numArray = numArray.filter((del) => {
+    if (del.id !== id) {
+      return del;
     }
   });
   render();
@@ -60,13 +60,13 @@ btnRef.addEventListener("click", () => {
         name: nameInputRef.value,
         nums: numInputRef.value,
       });
-
+      nameInputRef.value = "";
       numInputRef.value = "";
     } else {
-      numArray = numArray.map((nums) => {
-        if (nums.id == editId)
-          return { ...nums, name: nameInputRef.value, nums: numInputRef.value };
-        else return nums;
+      numArray = numArray.map((numss) => {
+        if (numss.id == editId)
+          return { ...numss, name: nameInputRef.value, nums: numInputRef.value };
+        else return numss;
       });
     }
     editId = 0;
@@ -81,20 +81,20 @@ btnRef.addEventListener("click", () => {
 
 // console.log(nameInputRef);
 
-nameInputRef.addEventListener("keyup", () => {
-  if (nameInputRef.value !== "") {
-    nameInputRef.classList.replace("is-invalid", "border-primary");
-  } else {
-    nameInputRef.classList.replace("border-primary", "is-invalid");
-  }
-});
+// nameInputRef.addEventListener("keyup", () => {
+//   if (nameInputRef.value !== "") {
+//     nameInputRef.classList.replace("is-invalid", "border-primary");
+//   } else {
+//     nameInputRef.classList.replace("border-primary", "is-invalid");
+//   }
+// });
 
-numInputRef.addEventListener("keyup", () => {
-  if (numInputRef.value !== "") {
-    numInputRef.classList.replace("is-invalid", "border-primary");
-  } else {
-    numInputRef.classList.replace("border-primary", "is-invalid");
-  }
-});
+// numInputRef.addEventListener("keyup", () => {
+//   if (numInputRef.value !== "") {
+//     numInputRef.classList.replace("is-invalid", "border-primary");
+//   } else {
+//     numInputRef.classList.replace("border-primary", "is-invalid");
+//   }
+// });
 
 render();
